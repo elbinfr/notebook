@@ -31,7 +31,9 @@
                             </span>
                             <hr>
                             <p>
-                                {{ $notebook->description }}
+                                @php
+                                    echo nl2br($notebook->description);
+                                @endphp
                             </p>
                         </div>
                         <div class="card-action padding-10">

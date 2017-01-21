@@ -20,7 +20,9 @@
                             {{ $note->created_at }}
                         </span>
                         <p>
-                            {{ $note->content }}
+                            @php
+                                echo nl2br($note->content);
+                            @endphp
                         </p>
                     </div>
                     <div class="card-action">
