@@ -2,14 +2,7 @@
 
 @section('content')
     <div class="padding-5 gris">
-        <div class="padding-5 gris">
-            <h6 class="center-align">
-                <a href="{{ url('/notebooks') }}" class="btn-floating waves-effect waves-light red">
-                    <i class="material-icons">present_to_all</i>
-                </a>
-                My Notes in {{ session()->get('notebook')->title }}
-            </h6>
-        </div>
+        @include('note.subheader', ['title' => 'My Notes in '.session()->get('notebook')->title ])
     </div>
     <div class="container">
         <div class="row">

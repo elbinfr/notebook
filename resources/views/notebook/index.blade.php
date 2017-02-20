@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="padding-5 gris">
-        <h6 class="center-align">My Notebooks</h6>
+        @include('notebook.subheader')
     </div>
     <div class="container">
         <div class="row">

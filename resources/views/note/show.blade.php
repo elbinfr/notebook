@@ -2,11 +2,7 @@
 
 @section('content')
     <div class="padding-5 gris">
-        <div class="padding-5 gris">
-            <h6 class="center-align">
-                My Note: {{ $note->title }}
-            </h6>
-        </div>
+        @include('note.subheader', ['title' => 'My Note: '.$note->title ])
     </div>
     <div class="container">
         <div class="row">
@@ -26,7 +22,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url('/notebooks/'.session()->get('notebook')->slug.'/open') }}" class="brown-text">
+                        <a href="{{ url('/notebooks/'.session()->get('notebook')->slug.'/open') }}" class="btn waves-effect waves-light light-blue darken-4">
                             Back to list of notes
                         </a>
                     </div>
