@@ -55,6 +55,7 @@
 
             function load(){
                 verifyErrors();
+                setFocus();
             }
 
             function verifyErrors(){
@@ -73,6 +74,10 @@
                     html: true
                 });
                 @endif
+            }
+
+            function setFocus(){
+                $('input[name=email]').focus();
             }
 
             setTimeout(load, 0);

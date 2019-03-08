@@ -27,10 +27,11 @@ class NotebookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         session()->forget('notebook');
-        $notebooks = Notebook::userId(auth()->user()->id)->orderBy('title')->get();
-
+        
+        $notebooks = auth()->user()->notebooks;// Notebook::where('user_id', $user_id)->orderBy('title')->get();
+        
         return view('notebook.index', compact('notebooks'));
     }
 
@@ -171,10 +172,11 @@ class NotebookController extends Controller
 
     public function open($slug)
     {
-        $notebook = Notebook::userId(auth()->user()->id)->slug($slug)->firstOrFail();
+        $user_id = auth()->user()->id;
+        $notebook = Notebook::where('user_id', $user_id)->where('slug', $slug)->firstOrFail();
         session()->put('notebook', $notebook);
 
-        $notes = Note::notebookId($notebook->id)->orderBy('created_at', 'desc')->get();
+        $notes = Note::where('notebook_id', $notebook->id)->orderBy('created_at', 'desc')->get();
 
         return view('note.index', compact('notes'));
     }

@@ -80,7 +80,7 @@ class NoteController extends Controller
     public function show($id)
     {
         $notebook = session()->get('notebook');
-        $note = Note::notebookId($notebook->id)->slug($id)->firstOrFail();
+        $note = Note::where('notebook_id', $notebook->id)->where('slug', $id)->firstOrFail();
 
         return view('note.show', compact('note'));
     }
@@ -94,7 +94,7 @@ class NoteController extends Controller
     public function edit($id)
     {
         $notebook = session()->get('notebook');
-        $note = Note::notebookId($notebook->id)->slug($id)->firstOrFail();
+        $note = Note::where('notebook_id', $notebook->id)->where('slug', $id)->firstOrFail();
 
         return view('note.edit', compact('note'));
     }
@@ -109,7 +109,7 @@ class NoteController extends Controller
     public function update(Request $request, $id)
     {
         $notebook = session()->get('notebook');
-        $note = Note::notebookId($notebook->id)->where('id',$id)->firstOrFail();
+        $note = Note::where('notebook_id', $notebook->id)->where('id',$id)->firstOrFail();
 
         $this->validate($request, [
             'title' => [
@@ -140,7 +140,7 @@ class NoteController extends Controller
     public function destroy($id)
     {
         $notebook = session()->get('notebook');
-        $note = Note::notebookId($notebook->id)->where('id',$id)->firstOrFail();
+        $note = Note::where('notebook_id', $notebook->id)->where('id',$id)->firstOrFail();
 
         Note::destroy($id);
         return redirect('/notebooks/'.$notebook->slug.'/open');

@@ -17,12 +17,4 @@ class Note extends Model
         return $this->belongsTo('App\Notebook');
     }
 
-    public function scopeNotebookId($query, $notebook_id)
-    {
-        return $query->where('notebook_id', $notebook_id);
-    }
-    public function scopeSlug($query, $slug)
-    {
-        return $query->where('slug', $slug);
-    }
 }

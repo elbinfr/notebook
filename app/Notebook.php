@@ -27,14 +27,4 @@ class Notebook extends Model
         return $this->hasMany('App\Note');
     }
 
-    public function scopeUserId($query, $user_id)
-    {
-        return $query->where('user_id', $user_id);
-    }
-
-    public function scopeSlug($query, $slug)
-    {
-        return $query->where('slug', $slug);
-    }
-
 }

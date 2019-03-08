@@ -30,6 +30,7 @@
 
             function load(){
                 verifyErrors();
+                setFocus();
             }
 
             function verifyErrors(){
@@ -47,6 +48,10 @@
                         html: true
                     });
                 @endif
+            }
+
+            function setFocus(){
+                $('input[name=title]').focus();
             }
 
             setTimeout(load, 0);
