@@ -1,7 +1,7 @@
 <div class="row" style="margin-bottom: 0px;">
     <div class="left">
-        <div class="chip">
-            My Notebooks
-        </div>
+        <a class="btn subheader disabled " style="color: #424242 !important;">
+            Mis libretas
+        </a>
     </div>
 </div>

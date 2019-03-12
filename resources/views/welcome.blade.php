@@ -7,6 +7,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link rel="icon" href="{{ asset('images/notebook.ico') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -17,8 +18,8 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
+                    <a href="{{ url('/login') }}">Ingresar</a>
+                    <a href="{{ url('/register') }}">Registrarse</a>
                 </div>
             @endif
 
@@ -29,12 +30,12 @@
 
                 <div class="links">
                     <p>
-                        easy to use tool that helps you organize your ideas
+                        Herramienta fácil de usar que te ayuda a organizar tus ideas.
                     </p>
                 </div>
 
                 <div class="footer">
-                    <a href="http://www.nubedeideas.pe/elbin.flores" target="_blank">Created by Elbin Flores</a>
+                    <a href="http://www.nubedeideas.pe" target="_blank">Creado por Nubedeideas.pe</a>
                 </div>
             </div>
 

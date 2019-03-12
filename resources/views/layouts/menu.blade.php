@@ -1,9 +1,9 @@
 @if (Auth::guest())
 <li>
-    <a href="{{ url('/login') }}" >Login</a>
+    <a href="{{ url('/login') }}" >Ingresar</a>
 </li>
 <li>
-    <a href="{{ url('/register') }}" >Register</a>
+    <a href="{{ url('/register') }}" >Registrarse</a>
 </li>
 @else
 <li>
@@ -15,7 +15,7 @@
     <li>
         <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-mobile-form').submit();">
-            Logout
+            Salir
         </a>
         <form id="logout-mobile-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}

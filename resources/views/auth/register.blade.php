@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-title">
-                        Register
+                        Registro de usuario
                     </div>
                     {!! Form::open(['url' => '/register', 
                         'method' => 'POST',
@@ -15,7 +15,7 @@
                         'class' => 'form']) !!}
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('first_name', 'First Name') !!}
+                                {!! Form::label('first_name', 'Nombre') !!}
                                 {!! Form::text('first_name', null, [
                                     'required' => '',
                                     'minlength' => '3',
@@ -24,7 +24,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('last_name', 'Last Name') !!}
+                                {!! Form::label('last_name', 'Apellidos') !!}
                                 {!! Form::text('last_name', null, [
                                     'required' => '',
                                     'minlength' => '3',
@@ -33,7 +33,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('email', 'E-Mail Address') !!}
+                                {!! Form::label('email', 'Correo electrónico') !!}
                                 {!! Form::email('email', null, [
                                     'required' => '',
                                     'maxlength' => '50']) !!}
@@ -41,7 +41,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('password', 'Password') !!}
+                                {!! Form::label('password', 'Contraseña') !!}
                                 {!! Form::password('password', [
                                     'id' => 'password', 
                                     'required' => '',
@@ -50,7 +50,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('password_confirmation', 'Confirm Password') !!}
+                                {!! Form::label('password_confirmation', 'Confirme contraseña') !!}
                                 {!! Form::password('password_confirmation', [
                                     'required' => '',
                                     'data-parsley-equalto' => '#password']) !!}
@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="right">
                                 <button class="btn waves-effect waves-light" type="submit">
-                                    Register
+                                    Registrar
                                 </button>
                             </div>
                         </div>

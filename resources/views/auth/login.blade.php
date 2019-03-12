@@ -7,36 +7,30 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-title">
-                        Login
+                        Ingreso a notebook
                     </div>
                     {!! Form::open(['url' => '/login', 'method' => 'POST']) !!}
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('email', 'E-Mail Address') !!}
+                                {!! Form::label('email', 'Correo electrónico') !!}
                                 {!! Form::email('email') !!}
                             </div>                            
                         </div>
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('password', 'Password') !!}
+                                {!! Form::label('password', 'Contraseña') !!}
                                 {!! Form::password('password') !!}
                             </div>
                         </div>
                         <div class="row">
-                            <p>
-                                {!! Form::checkbox('remember', null, false, ['id' => 'remember']) !!}
-                                {!! Form::label('remember', 'Remember Me') !!}
-                            </p>
-                        </div>
-                        <div class="row">
                             <div class="right">
                                 <button class="btn waves-effect waves-light" type="submit">
-                                    Login
+                                    Ingresar
                                     <i class="material-icons right">input</i>
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 <a href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
+                                    ¿Olvidaste tu contraseña?
                                 </a>
                             </div>
                         </div>

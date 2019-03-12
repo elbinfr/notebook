@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">
-                            Reset Password
+                            Restablecer contrseña
                         </div>
                         {!! Form::open([
                             'url' => '/password/email',
@@ -15,7 +15,7 @@
                             'data-parsley-validate' => '']) !!}
                         <div class="row">
                             <div class="input-field">
-                                {!! Form::label('email', 'E-Mail Address') !!}
+                                {!! Form::label('email', 'Correo electrónico') !!}
                                 {!! Form::email('email', null, [
                                         'required' => ''
                                     ]) !!}
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="right">
                                 <button class="btn waves-effect waves-light" type="submit">
-                                    Send Password Reset Link
+                                    Enviar enlace para restablecer contraseña
                                     <i class="material-icons right">input</i>
                                 </button>                               &nbsp;&nbsp;&nbsp;
 

@@ -5,21 +5,21 @@
             ]) !!}
 <div class="row">
     <div class="input-field">
-        {!! Form::label('title', 'Title') !!}
+        {!! Form::label('title', 'Título') !!}
         {!! Form::text('title', $note->title, [
             'required' => '',
-            'data-parsley-required-message' => 'Title is required',
+            'data-parsley-required-message' => 'Se requiere un título',
             'minlength' => '3'
         ]) !!}
     </div>
 </div>
 <div class="row">
     <div class="input-field">
-        {!! Form::label('content', 'Content') !!}
+        {!! Form::label('content', 'Contenido') !!}
         {!! Form::textarea('content', $note->content, [
             'class' => 'materialize-textarea',
             'required' => '',
-            'data-parsley-required-message' => 'Content is required',
+            'data-parsley-required-message' => 'Se requiere un contenido',
             'minlength' => '3'
         ]) !!}
     </div>
@@ -27,10 +27,10 @@
 <div class="row">
     <div class="right">
         <button class="btn waves-effect waves-light light-blue darken-4" type="submit">
-            Save
+            Guardar
         </button>
         <a href="{{ url('/notebooks/'.session()->get('notebook')->slug.'/open') }}" class="waves-effect waves-light btn red darken-1">
-            Cancel
+            Cancelar
         </a>
     </div>
 </div>

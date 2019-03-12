@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">
-                            Reset Password
+                            Restablecer contraseña
                         </div>
                         {!! Form::open([
                             'url' => '/password/reset',
@@ -17,13 +17,13 @@
                             <input type="hidden" name="token" value="{{ $token }}">
                             <div class="row">
                                 <div class="input-field">
-                                    {!! Form::label('email', 'E-Mail Address') !!}
+                                    {!! Form::label('email', 'Correo electrónico') !!}
                                     {!! Form::email('email', null, ['required' => '']) !!}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field">
-                                    {!! Form::label('password', 'Password') !!}
+                                    {!! Form::label('password', 'Contraseña') !!}
                                     {!! Form::password('password', [
                                         'id' => 'password',
                                         'required' => '']) !!}
@@ -31,7 +31,7 @@
                             </div>
                             <div class="row">
                                 <div class="input-field">
-                                    {!! Form::label('password_confirmation', 'Confirm Password') !!}
+                                    {!! Form::label('password_confirmation', 'Confirme contraseña') !!}
                                     {!! Form::password('password_confirmation', [
                                         'required' => '',
                                         'data-parsley-equalto' => '#password']) !!}
@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="right">
                                     <button class="btn waves-effect waves-light" type="submit">
-                                        Reset Password
+                                        Restablecer contraseña
                                         <i class="material-icons right">input</i>
                                     </button>
                                 </div>

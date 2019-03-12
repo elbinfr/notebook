@@ -82,8 +82,6 @@ class NotebookController extends Controller
             $url = storage_path('app/public/notebooks/'.$image_name);
             Image::make($image)->resize(400,400)->save($url);
 
-            //Storage::disk('notebooks')->put($image_name, File::get($image));
-
             $notebook->image = $image_name;
             $notebook->save();
         }
@@ -143,13 +141,13 @@ class NotebookController extends Controller
         $notebook->description = trim($request->description);
         $notebook->slug = str_slug(trim($request->title), '-');
 
+        
         if($request->hasFile('image')){
             $image = $request->file('image');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
-
+            
             $url = storage_path('app/public/notebooks/'.$image_name);
-            Image::make($image)->resize(400,400)->save($url);
-
+            $img = Image::make($image)->resize(400,400)->save($url);
             $notebook->image = $image_name;
         }
 

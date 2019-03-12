@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="padding-5 gris">
-        @include('note.subheader', ['title' => 'My Notes in '.session()->get('notebook')->title ])
+    <div class="padding-5 grey lighten-4">
+        @include('note.subheader', ['title' => 'Mis notas en '.session()->get('notebook')->title ])
     </div>
     <div class="container">
         <div class="row">
@@ -23,8 +23,8 @@
                             </p>
                         </div>
                         <div class="card-action">
-                            <a href="{{ url('/notes/'.$note->slug) }}" class="brown-text">Show</a>
-                            <a href="{{ url('/notes/'.$note->slug.'/edit') }}" class="brown-text">Edit</a>
+                            <a href="{{ url('/notes/'.$note->slug) }}" class="brown-text">Abrir</a>
+                            <a href="{{ url('/notes/'.$note->slug.'/edit') }}" class="brown-text">Modificar</a>
                             @include('note.delete', ['note' => $note])
                         </div>
                     </div>
@@ -57,12 +57,12 @@
 
             function deleteNotebook(event, title){
                 swal({
-                    title: "Are you sure?",
-                    text: "You want to remove the note: " + title + " !",
+                    title: "¿Está seguro?",
+                    text: "Desea eliminar la nota: " + title + " !",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
+                    confirmButtonText: "Si, elimínalo!",
                     closeOnConfirm: true
                 },
                 function(){

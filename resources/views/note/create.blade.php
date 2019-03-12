@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="padding-5 gris">
-        @include('note.subheader', ['title' => 'My Notes in '.session()->get('notebook')->title ])
+    <div class="padding-5 grey lighten-4">
+        @include('note.subheader', ['title' => 'Mis notas en '.session()->get('notebook')->title ])
     </div>
     <div class="container">
         <div class="row">
@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">
-                            New Note
+                            Nueva Nota
                         </div>
                         @include('note.form', [ 'note' => $note,
                                                     'url' => '/notes',

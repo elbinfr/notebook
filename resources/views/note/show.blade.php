@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="padding-5 gris">
-        @include('note.subheader', ['title' => 'My Note: '.$note->title ])
+    <div class="padding-5 grey lighten-4">
+        @include('note.subheader', ['title' => 'Mi nota: '.$note->title ])
     </div>
     <div class="container">
         <div class="row">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-action">
                         <a href="{{ url('/notebooks/'.session()->get('notebook')->slug.'/open') }}" class="btn waves-effect waves-light light-blue darken-4">
-                            Back to list of notes
+                            Volver a lista de notas
                         </a>
                     </div>
                 </div>

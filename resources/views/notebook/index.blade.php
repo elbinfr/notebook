@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="padding-5 gris">
+    <div class="padding-5 grey lighten-4">
         @include('notebook.subheader')
     </div>
     <div class="container">
@@ -19,15 +19,17 @@
                         <div class="card-content ">
                             <span class="card-title truncate activator">
                                 {{ str_limit($notebook->title) }}
-                                <a class="right btn-floating waves-effect waves-light red">
-                                    <i class="tiny material-icons">import_export</i>
+                                <a class="right btn-floating waves-effect waves-light blue darken-4">
+                                    <i class="tiny material-icons dp48">arrow_drop_up</i>
                                 </a>
                             </span>
                         </div>
                         <div class="card-reveal break-word">
                             <span class="card-title ">
                                 {{ $notebook->title }}
-                                <i class="tiny material-icons">import_export</i>
+                                <a class="right btn-floating waves-effect waves-light blue darken-4">
+                                    <i class="tiny material-icons dp48">arrow_drop_down</i>
+                                </a>                                
                             </span>
                             <hr>
                             <p>
@@ -37,8 +39,8 @@
                             </p>
                         </div>
                         <div class="card-action padding-10">
-                            <a href="{{ url('/notebooks/'.$notebook->slug.'/open') }}">Open</a>
-                            <a href="{{ url('/notebooks/'.$notebook->id.'/edit') }}">Edit</a>
+                            <a href="{{ url('/notebooks/'.$notebook->slug.'/open') }}">Abrir</a>
+                            <a href="{{ url('/notebooks/'.$notebook->id.'/edit') }}">Modificar</a>
                             @include('notebook.delete', ['notebook' => $notebook])
                         </div>
                     </div>
@@ -71,12 +73,12 @@
 
             function deleteNotebook(event, title){
                 swal({
-                    title: "Are you sure?",
-                    text: "You want to remove the notebook: " + title + " !",
+                    title: "¿Está seguro?",
+                    text: "Desea eliminar la libreta: " + title + " !",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
+                    confirmButtonText: "Sí, elimínalo!",
                     closeOnConfirm: true
                 },
                 function(){

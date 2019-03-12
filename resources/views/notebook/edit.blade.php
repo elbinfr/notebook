@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="padding-5 gris">
+    <div class="padding-5 grey lighten-4">
         @include('notebook.subheader')
     </div>
     <div class="container">
@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">
-                            Edit Notebook
+                            Modificar libreta
                         </div>
                         @include('notebook.form', [ 'notebook' => $notebook,
                                                     'url' => '/notebooks/'.$notebook->id,

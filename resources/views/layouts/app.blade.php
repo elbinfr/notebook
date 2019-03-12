@@ -8,9 +8,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
+    <link rel="icon" href="{{ asset('images/notebook.ico') }}">
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,10 +41,10 @@
                     <ul class="right hide-on-med-and-down">
                         @if (Auth::guest())
                             <li>
-                                <a href="{{ url('/login') }}" >Login</a>
+                                <a href="{{ url('/login') }}" >Ingresar</a>
                             </li>
                             <li>
-                                <a href="{{ url('/register') }}" >Register</a>
+                                <a href="{{ url('/register') }}" >Registrarse</a>
                             </li>
                         @else
                             <li>
@@ -55,7 +56,7 @@
                                 <li>
                                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Salir
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
